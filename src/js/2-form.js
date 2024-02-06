@@ -2,19 +2,19 @@
 
 const FORM_KEY = 'feedback-form-state';
 
-const removeStrogeFormData = (key) => {
+const removeStorageFormData = (key) => {
   localStorage.removeItem(key);
 }
 
 const getFormData = (form) => {
-  const email = form.email.value;
-  const message = form.message.value;
+  const email = form.email.value.trim();
+  const message = form.message.value.trim();
 
   return { email, message };
 }
 
 const setFormData = (form, key) => {
-  const dataInStorage = getStrogeFormData(key);
+  const dataInStorage = getStorageFormData(key);
 
   if (dataInStorage !== null) {
     form.email.value = dataInStorage.email;
@@ -22,11 +22,11 @@ const setFormData = (form, key) => {
   }
 }
 
-const setStrogeFormData = (key, data) => {
+const setStorageFormData = (key, data) => {
   localStorage.setItem(key, JSON.stringify(data));
 }
 
-const getStrogeFormData = (key) => {
+const getStorageFormData = (key) => {
   return JSON.parse(localStorage.getItem(key));
 }
 
@@ -34,7 +34,7 @@ const formHandler = (form) => {
   form.addEventListener('input', (e) => {
     const formData = getFormData(e.currentTarget);
 
-    setStrogeFormData(FORM_KEY, formData);
+    setStorageFormData(FORM_KEY, formData);
   });
 
   form.addEventListener('submit', (e) => {
@@ -48,7 +48,8 @@ const formHandler = (form) => {
       : form.message.closest('label').firstElementChild.removeAttribute('style');
 
     if (form.email.value && form.message.value) {
-      removeStrogeFormData(FORM_KEY);
+      console.log(getStorageFormData(FORM_KEY));
+      removeStorageFormData(FORM_KEY);
       form.reset();
     }
   });
