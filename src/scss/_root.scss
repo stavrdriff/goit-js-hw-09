@@ -1,15 +1,9 @@
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  --font-family-primary: 'Montserrat', system-ui, sans-serif;
+  --letter-spacing-primary: 0.04em;
+  --font-size-primary: 16px;
+  --line-height-primary: 1.5;
+  --font-weight-primary: 400;
+  --text-color-primary: #2e2f42;
+  --body-background: #fff;
 }

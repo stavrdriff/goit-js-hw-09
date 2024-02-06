@@ -1,0 +1,79 @@
+.feedback-form {
+  --input-border-width: 1px;
+  --input-border-color: #808080;
+  --input-border-color-focus: #000;
+  --submit-button-background: #4E75FF;
+  --submit-button-background-hover: #6C8CFF;
+  --submit-button-text-color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  width: 100%;
+  max-width: 408px;
+  padding: 1.5rem;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    &:last-of-type {
+      padding-bottom: 0.5rem;
+    }
+  }
+
+  input,
+  textarea {
+    border-width: var(--input-border-width);
+    border-style: solid;
+    border-color: #808080;
+    border-radius: .25rem;
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-primary);
+    line-height: var(--line-height-primary);
+    padding: calc(.5rem - var(--input-border-width));
+
+    &:focus {
+      outline-offset: -1px;
+      outline: var(--input-border-width) solid var(--input-border-color-focus);
+    }
+  }
+
+  textarea {
+    min-height: 80px;
+    resize: none;
+
+    &::-webkit-scrollbar {
+      width: .25rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 0 .16rem .16rem 0;
+    }
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    width: fit-content;
+    color: var(--submit-button-text-color);
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-primary);
+    letter-spacing: var(--letter-spacing-primary);
+    line-height: var(--line-height-primary);
+    border: none;
+    border-radius: .25rem;
+    background-color: var(--submit-button-background);
+
+    @include transition(background-color);
+
+    @include event {
+      background-color: var(--submit-button-background-hover);
+    }
+  }
+}
