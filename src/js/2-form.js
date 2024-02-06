@@ -1,6 +1,6 @@
 'use strict';
 
-const FORM_KEY = 'formUserData';
+const FORM_KEY = 'feedback-form-state';
 
 const removeStrogeFormData = (key) => {
   localStorage.removeItem(key);
@@ -39,8 +39,18 @@ const formHandler = (form) => {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    removeStrogeFormData(FORM_KEY);
-    form.reset();
+    if (!form.email.value) {
+      form.email.closest('label').firstElementChild.style.color = 'red';
+    }
+
+    if (!form.message.value) {
+      form.email.closest('label').firstElementChild.style.color = 'red';
+    }
+
+    if (form.email.value && form.message.value) {
+      removeStrogeFormData(FORM_KEY);
+      form.reset();
+    }
   });
 }
 
