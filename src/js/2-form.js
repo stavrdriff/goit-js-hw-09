@@ -44,7 +44,7 @@ const formHandler = (form) => {
     }
 
     if (!form.message.value) {
-      form.email.closest('label').firstElementChild.style.color = 'red';
+      form.message.closest('label').firstElementChild.style.color = 'red';
     }
 
     if (form.email.value && form.message.value) {
