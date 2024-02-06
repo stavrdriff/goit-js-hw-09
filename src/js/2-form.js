@@ -39,13 +39,13 @@ const formHandler = (form) => {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (!form.email.value) {
-      form.email.closest('label').firstElementChild.style.color = 'red';
-    }
+    !form.email.value
+      ? form.email.closest('label').firstElementChild.style.color = 'red'
+      : form.email.closest('label').firstElementChild.removeAttribute('style');
 
-    if (!form.message.value) {
-      form.message.closest('label').firstElementChild.style.color = 'red';
-    }
+    !form.message.value
+      ? form.message.closest('label').firstElementChild.style.color = 'red'
+      : form.message.closest('label').firstElementChild.removeAttribute('style');
 
     if (form.email.value && form.message.value) {
       removeStrogeFormData(FORM_KEY);
