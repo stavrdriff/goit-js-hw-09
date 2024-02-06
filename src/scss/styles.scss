@@ -1,3 +1,4 @@
+// base styles
 @import './reset';
 @import './root';
 @import './base';
@@ -6,7 +7,7 @@
 // libraries
 @import '../../node_modules/simplelightbox/dist/simple-lightbox.min';
 
-// styles
+// components styles
 @import './section';
 @import './container';
 @import '../partials/navigation/scss/navigation';

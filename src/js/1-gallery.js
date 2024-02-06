@@ -1,6 +1,6 @@
 'use strict';
 
-import SimpleLightbox from "simplelightbox";
+import SimpleLightbox from 'simplelightbox';
 
 const images = [
   {
